@@ -1,13 +1,17 @@
+# Author : johan oeh
+# script creates a c++ class skeleton  with header file .h and implementation file .cpp
 UPPER=${1^^}
 DATE=`date +%Y-%m-%d`
 
 echo "#ifndef ${UPPER}_H
 #define ${UPPER}_H
+
 /**
  * @author $USER
  * created $DATE
  * Last edited :
  */
+
 class $1 {
 
 public: 
@@ -21,6 +25,7 @@ private:
 };
 
 #endif /*${UPPER}_H*/
+
 " > ${1}.h
 echo "/**
  *
@@ -39,5 +44,8 @@ ${1}::${1}(const ${1}& orig){
 
 }
 
-${1}::~${1}(){} " > ${1}.cpp
+${1}::~${1}(){
+
+}
+" > ${1}.cpp
 
